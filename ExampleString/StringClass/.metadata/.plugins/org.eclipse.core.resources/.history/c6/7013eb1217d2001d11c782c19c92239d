@@ -1,0 +1,28 @@
+package com.sgtesting.regularexpression;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegularExpressionDemo {
+
+	public static void main(String[] args) {
+		matchesDemo();
+
+	}
+	private static void matchesDemo()
+	{
+		Pattern p=Pattern.compile("Java");
+		Matcher m=p.matcher("Java");
+		boolean v=m.matches();
+		System.out.println(v);
+	}
+	private static void Find() 
+	{
+		Pattern p=Pattern.compile("Java");
+		Matcher m=p.matcher("java jdk java jre jvm java");
+		boolean l=m.find();
+		System.out.println(l);
+		
+	}
+
+}

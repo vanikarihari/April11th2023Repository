@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="scenariosoutput">
+	<test name="scenarios">
+		<classes>
+			<class name="com.sgtesting.prototype.AssignmentPrototype2">
+				<class name="com.sgtesting.prototype.AssignmentPrototype3">
+					<class name="com.sgtesting.prototype.AssignmentPrototype4">
+						<class name="com.sgtesting.prototype.AssignmentPrototype5">
+						</class>
+					</class>
+				</class>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name= "buttermilk">
+<test  name="chillie">
+<classes>
+<class   name="com.sgtesting.vaniproject.vaniassaivalidation1">
+</class>
+<class   name="com.sgtesting.vaniproject.vaniassaivalidation1">
+</class>
+<class   name="com.sgtesting.vaniproject.vaniassaivalidation1">
+</class>
+
+</classes>
+</test> 
+
+</suite>

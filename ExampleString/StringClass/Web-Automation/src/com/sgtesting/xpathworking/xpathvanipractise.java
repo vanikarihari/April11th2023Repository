@@ -1,0 +1,59 @@
+package com.sgtesting.xpathworking;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+
+public class xpathvanipractise {
+	private static WebDriver v1=null;
+
+
+	public static void main(String[] args) {
+		launchdriverhere();
+		navigatevani();
+
+	}
+	private static void launchdriverhere()
+	{
+		try {
+			ChromeOptions op=new ChromeOptions();
+			op.addArguments("--remote-allow-origins=*");
+			v1=new ChromeDriver(op);
+
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void navigatevani()
+	{
+		try {
+			v1.get("file:///E:/Example/Seleniumnotes/WebTableHTML.html");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case1xpath()
+	{
+		try {
+			//put salary to sachin tendulkar
+			v1.findElement(By.xpath("//td[text()='Sachin Tendulkar']/following-sibling::td[4]/input")).sendKeys("200000");
+			v1.findElement(By.xpath("//td[text()='Sushma Swaraj']/following-sibling::td[4]/input")).sendKeys("253333");
+			v1.findElement(By.xpath("//td[text()='Sushma Swaraj']/following-sibling::td[4]/input")).clear();
+			//using 
+			v1.findElement(By.xpath("//td[text()='Bhagath Singh']/following::tr[2]/td[6]/input")).sendKeys("89000");
+			v1.findElement(By.xpath("//input[@id='edit4']/preceding::tr[1]/td[1]")).click();
+			
+			
+			
+			}catch(Exception e)
+		{
+				e.printStackTrace();
+		}
+	}
+
+}

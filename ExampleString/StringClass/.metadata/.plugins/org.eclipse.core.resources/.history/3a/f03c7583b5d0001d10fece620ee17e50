@@ -1,0 +1,122 @@
+package com.sgtesting.assignments;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.TargetLocator;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Assignment1 {		
+    private static WebDriver obj=null;
+	
+	public static void openingbrowser()
+	{
+		try {
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+
+			obj=new ChromeDriver(options);
+			
+		}catch(Exception f)
+		{
+		    f.printStackTrace();
+		}
+		
+	}
+	public static void NavigateURL()
+	{
+		try {
+			obj.get("http://localhost:81/login.do");
+			Thread.sleep(2000);
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static void usernamepassword()
+	{
+		try {
+			obj.findElement(By.id("username")).sendKeys("admin");
+			Thread.sleep(1000);
+			obj.findElement(By.xpath("//*[@id=\"loginFormContainer\"]/tbody/tr[1]/td/table/tbody/tr[2]/td/input")).sendKeys("manager");
+			Thread.sleep(1000);
+			obj.findElement(By.xpath("//*[@id='loginButton']/div")).click();
+			Thread.sleep(1000);
+			
+		}catch(Exception d)
+		{
+			d.printStackTrace();
+		}
+	}
+	public static void createuser()
+	{
+		try {
+			obj.findElement(By.id("gettingStartedShortcutsMenuCloseId")).click();
+			Thread.sleep(1000);
+			obj.findElement(By.xpath("//*[@id=\"topnav\"]/tbody/tr[1]/td[5]/a")).click();
+			Thread.sleep(1000);
+			obj.findElement(By.xpath("//*[@id=\"createUserDiv\"]/div\r\n")).click();
+			Thread.sleep(1000);
+			obj.findElement(By.id("userDataLightBox_firstNameField")).sendKeys("Harish");
+			Thread.sleep(1000);
+			obj.findElement(By.id("userDataLightBox_lastNameField")).sendKeys("Nibba");
+			Thread.sleep(1000);
+			obj.findElement(By.id("userDataLightBox_emailField")).sendKeys("lokarehari.rcr@gmail.com");
+			Thread.sleep(1000);
+			obj.findElement(By.name("username")).sendKeys("demoUser1");
+			Thread.sleep(1000);
+			obj.findElement(By.name("password")).sendKeys("Welcome1");
+			Thread.sleep(1000);
+			obj.findElement(By.name("passwordCopy")).sendKeys("Welcome1");
+			Thread.sleep(1000);
+			obj.findElement(By.xpath("//*[@id=\"userDataLightBox_commitBtn\"]")).click();
+			Thread.sleep(1000);
+			
+			Thread.sleep(3000);
+			
+		}catch(Exception d)
+		{
+			d.printStackTrace();
+		}
+	}
+	public static void deleteuser()
+	{
+		try {
+			obj.findElement(By.xpath("//*[@id='userListTableContainer']/table/tbody/tr[2]/td[1]")).click();
+			Thread.sleep(2000);
+			obj.findElement(By.id("userDataLightBox_deleteBtn")).click();
+			Thread.sleep(2000);
+			TargetLocator t=obj.switchTo();
+			Alert a=t.alert();
+			a.accept();
+			Thread.sleep(2000);
+			
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static void Logout()
+	{
+		try {
+			obj.findElement(By.id("logoutLink")).click();      
+			Thread.sleep(1000);
+		}catch(Exception e)
+		{
+			e.printStackTrace();         
+		}
+	}
+	public static void closeapp()
+	{
+		try {
+			obj.close();     
+		}catch(Exception e)
+		{
+			e.printStackTrace();         
+		}
+	}
+
+}

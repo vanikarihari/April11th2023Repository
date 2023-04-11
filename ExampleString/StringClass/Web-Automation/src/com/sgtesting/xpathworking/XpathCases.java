@@ -1,0 +1,323 @@
+ package com.sgtesting.xpathworking;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class XpathCases {
+	private static WebDriver h=null;
+	public static void main(String[] args) {
+		launchbrowser();
+		//NavigateURL();
+		//case1xpath();
+		//case2xpath();
+		//xpathcase3();
+		//submit();
+		//case3tagwith_attribute();
+		//case4only_withattribute();
+	//	case6_with_more_attribute_tagname();
+		//case6_with_or();
+		//case6_with_and();
+	//	case9_starts_with();
+		//case11textcotent();
+		//case11startswithcontainstext();
+	    NavigateURL_special_case();
+		special_case1();
+		 
+		// casefly();
+		 //casefly2();
+		 //casefly3();
+		
+		
+		
+
+	}
+	private static void launchbrowser()
+	{
+		try {
+			ChromeOptions op=new ChromeOptions();
+			op.addArguments("--remote-allow-origins=*");
+			h=new ChromeDriver(op);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+
+	private static void NavigateURL()
+	{
+		try {
+			h.navigate().to("file:///E:/Example/Seleniumnotes/Sample.html");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static void NavigateURL_special_case()
+	{
+		try {
+			h.navigate().to("file:///E:/Example/Seleniumnotes/WebTableHTML.html");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static void case1xpath()
+	{
+       try {
+    	   h.findElement(By.xpath("html/body/div/form/input")).sendKeys("admin");
+    	   
+       }catch(Exception e)
+       {
+    	   e.printStackTrace();
+       }
+	}
+	private static void case2xpath()
+	{
+       try {
+    	   h.findElement(By.xpath("//input[1]")).sendKeys("Harish");
+    	   
+    	   
+       }catch(Exception e)
+       {
+    	   e.printStackTrace();
+       }
+	}
+	private static void xpathcase3()
+	{
+		try {
+			h.findElement(By.xpath("//input[2]")).sendKeys("AGSTYA");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void submit()
+	{
+		try {
+			h.findElement(By.xpath("//input[3]")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case3tagwith_attribute()  
+	{
+		try {
+			h.findElement(By.xpath("//input[@name='user1name1']")).sendKeys("VANI");
+			h.findElement(By.xpath("//input[@id='pwd1pass1word1']")).sendKeys("Ravi");
+			h.findElement(By.xpath("//input[@id='btn1submit1button1']")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case4only_withattribute()
+	{
+		try {
+			h.findElement(By.xpath("//*[@class='user1name1']")).sendKeys("billi");
+			h.findElement(By.xpath("//*[@name='pass1word1']")).sendKeys("meow");
+			h.findElement(By.xpath("//*[@value='Submit']")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case6_with_more_attribute_tagname()
+	{
+		try {
+			h.findElement(By.xpath("//input[@id='uid1user1name1'][@name='user1name1']")).sendKeys("billi");
+			h.findElement(By.xpath("//input[@name='pass1word1'][@id='pwd1pass1word1']")).sendKeys("meow");
+			h.findElement(By.xpath("//input[@name='submit1btn1'][@id='btn1submit1button1']")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case6_with_or()
+	{
+		try {
+			h.findElement(By.xpath("//input[@id='uid1user1name1'  or @name='user1name13']")).sendKeys("kittu");
+			h.findElement(By.xpath("//input[@name='pass1word1' or  @id='pwd1pass1word12']")).sendKeys("1234");
+			h.findElement(By.xpath("//input[@name='submit1btn1' or @id='btn1submit1button11']")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case6_with_and()
+	{
+		try {
+			h.findElement(By.xpath("//input[@id='uid1user1name1'and @name='user1name1']")).sendKeys("billi");
+			h.findElement(By.xpath("//input[@name='pass1word1' and @id='pwd1pass1word1']")).sendKeys("meow");
+			h.findElement(By.xpath("//input[@name='submit1btn1' and @id='btn1submit1button1']")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case9_starts_with() 
+	{
+		try {
+			h.findElement(By.xpath("//input[starts-with(@id, 'uid1')]")).sendKeys("PINTU");
+			h.findElement(By.xpath("//input[contains(@id, 'pass1')]")).sendKeys("chintu");
+					h.findElement(By.xpath("//input[starts-with(@id, 'btn1')]")).click();
+		
+		
+			
+		}catch(Exception e)
+		
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case10_starts_with() 
+	{
+		try {
+			h.findElement(By.xpath("//input[starts-with(@id, 'uid1')]")).sendKeys("PINTU");
+			h.findElement(By.xpath("//input[contains(@id, 'pass1')]")).sendKeys("chintu");
+					h.findElement(By.xpath("//input[starts-with(@id, 'btn1')]")).click();
+		
+		
+			
+		}catch(Exception e)
+		
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case11textcotent()
+	{
+		try {
+			//h.findElement(By.xpath("//a[text()='S G Software Testing']")).click();
+			h.findElement(By.xpath("//a[text()='SeleniumHQ']")).click();				
+			
+		}catch(Exception e)
+		
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void case11startswithcontainstext()
+	{
+		try {
+			
+			//h.findElement(By.xpath("//a[starts-with(text(),'Ecl')]")).click();
+
+			h.findElement(By.xpath("//a[contains(text(),'lip')]" )).click();
+			
+		}catch(Exception e)
+		
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void special_case1()
+	{
+		try {
+			//case1
+			//h.findElement(By.xpath("//td[text()='Sachin Tendulkar']/following-sibling::td[4]/input")).sendKeys("25900");
+			//h.findElement(By.xpath("//td[text()='Sushma Swaraj']/following-sibling::td[4]/input")).sendKeys("150000");
+			//case2
+			//h.findElement(By.xpath("//td[text()='Rahul Dravid'] /following::tr[2]/td[6]/input")).sendKeys("10000");
+			//h.findElement(By.xpath("//td[text()='Narendra Modi']/following::tr[2]/td[6]/input")).sendKeys("15134657963");
+			//case3
+			//td[text()='Indian Freedom Fighter']/preceding-sibling::td[1]/preceding-sibling::td[1]/input
+			//td[text()='Indian Freedom Fighter']/preceding-sibling::td[1]/preceding-sibling::td[1]/input
+			
+			//case4
+			//h.findElement(By.xpath("//td[text()='Bhagath Singh']/preceding::tr[1]/td[1]/input")).click();
+			
+			//h.findElement(By.xpath("//td[text()='Rahul Dravid']/preceding::tr[1]/td[6]/input")).sendKeys("25000");
+			h.findElement(By.xpath("//td[text()='Sushma Swaraj']/preceding::tr[4]/td[6]/input")).sendKeys("25000");
+			
+			
+			//case5
+			//h.findElement(By.xpath("//input[@id='edit2']/ancestor::tr[1]/td[1]/input")).click();
+			h.findElement(By.xpath("//td[text()='Indian Cricketer' ]/ancestor::tr[1]/td[6]/input")).sendKeys("5600");
+			
+			//case6
+			//h.findElement(By.xpath("//table[@id='tbl1']/descendant::tr[4]/td[1]/input")).click();
+		}catch(Exception e)
+		
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void casefly()
+	{
+		try {
+			List<WebElement> links=h.findElements(By.xpath("//a[@href]"));
+			for(int i=0;i<links.size();i++)
+			{
+				WebElement Link=links.get(i);
+				System.out.println(Link.getText());
+			}
+			
+		}catch(Exception e)
+		{
+	         e.printStackTrace();	
+		}
+	}
+
+	private static void casefly2()
+	{
+		try {
+			List<WebElement> links=h.findElements(By.xpath("//a[@href]"));
+			for(int i=0;i<links.size();i++)
+			{
+				WebElement Link=links.get(i);
+				String Content=Link.getText();
+				if(Content.endsWith("HQ"))
+				{
+					Link.click();
+					Thread.sleep(2000);
+					break;
+				}
+			}
+			h.navigate().back();
+			
+		}catch(Exception e)
+		{
+	         e.printStackTrace();	
+		}
+	}
+	private static void casefly3()
+	{
+		try {
+			List<WebElement> links=h.findElements(By.xpath("//a[@href]"));
+			for(int i=0;i<links.size();i++)
+			{
+				WebElement Link=links.get(i);
+				String LinkText=Link.getText();
+				if(LinkText.endsWith("HQ"))
+				{
+					Link.click();
+				}
+			}
+			
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}
+

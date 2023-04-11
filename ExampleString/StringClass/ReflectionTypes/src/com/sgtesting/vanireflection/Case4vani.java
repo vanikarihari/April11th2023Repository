@@ -1,0 +1,15 @@
+package com.sgtesting.vanireflection;
+
+public class Case4vani {
+	public static void method(String[]args) {
+		
+		try {
+			Class.forName("com.sgtesting.vanireflection.Sample");
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+	}
+}

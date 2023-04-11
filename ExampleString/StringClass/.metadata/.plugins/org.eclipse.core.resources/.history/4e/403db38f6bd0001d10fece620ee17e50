@@ -1,0 +1,16 @@
+package com.sgtesting.reflectionmethod;
+class Demo
+{
+	static 
+	{
+		System.out.println("Static Block");
+	}
+}
+public class Sample2 {
+
+	public static void main(String[] args) {
+		Demo d=new Demo();
+
+	}
+
+}

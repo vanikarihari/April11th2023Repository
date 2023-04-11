@@ -1,0 +1,23 @@
+package com.sgtesting.reflectionmethod;
+class Demo
+{
+	static String v;
+	static 
+	{
+		System.out.println("Static Block");
+	}
+	Demo()
+	{
+		System.out.println("Constructor");
+	}
+}
+
+public class Sample2 {
+
+	public static void main(String[] args) {
+	Demo.v=null;
+	System.out.println();
+
+	}
+
+}

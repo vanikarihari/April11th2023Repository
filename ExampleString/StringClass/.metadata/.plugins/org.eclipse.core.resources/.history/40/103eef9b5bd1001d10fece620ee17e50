@@ -1,0 +1,46 @@
+package com.sgtesting.vanireflection;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReflectionCase5 {
+
+	public static void main(String[] args) {
+		PoiRunner();
+
+	}
+	private static void PoiRunner()
+	{
+		FileInputStream fi=null;
+		Workbook wb=null;
+		Sheet sh=null;
+		Row ro=null;
+		Cell ce=null;
+		try {
+			fi=new FileInputStream("E:\\ReflectionaAssignments\\Assignment3.xlsx");
+			wb=new XSSFWorkbook(fi);
+			String a=wb.getSheetName(0);
+			sh=wb.getSheet(a);
+			int pr=sh.getPhysicalNumberOfRows();
+			for(int i=0;i<pr;i++)
+			{
+				ro=sh.getRow(i);
+				ce=ro.getCell(0);
+				String methodnamestore=ce.getStringCellValue();
+				System.out.println(methodnamestore);
+				ce=ro.getCell(1);
+				String packagenamestore=ce.getStringCellValue();
+				System.out.println(packagenamestore);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

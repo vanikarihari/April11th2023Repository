@@ -1,0 +1,35 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class ActionClass {
+    public static WebDriver o1;
+	public static void main(String[] args) {
+		launch();
+		navigate();
+
+	}
+	private static void launch()
+	{
+		try {
+			ChromeOptions o=new ChromeOptions();
+			o.addArguments("--remote-allow-origins=*");
+			o1=new ChromeDriver(o);
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void navigate()
+	{
+		try {
+				o1.get("https://www.flipkart.com/");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

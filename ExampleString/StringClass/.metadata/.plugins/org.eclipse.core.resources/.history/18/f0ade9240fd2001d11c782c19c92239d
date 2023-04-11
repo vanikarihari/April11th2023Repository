@@ -1,0 +1,38 @@
+package com.sgtesting.serialization;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class SerializationDemo {
+
+	public static void main(String[] args) {
+		serialization();
+
+	}
+	private static void serialization()
+	{
+		FileOutputStream f=null;
+		ObjectOutputStream o=null;
+		Employee e=null;
+		try {
+			f=new FileOutputStream("E:\\Example\\Employee.ser");
+			e=new Employee(777,"Harish","Lokare",95000);
+			o=new ObjectOutputStream(f);
+			o.writeObject(e);
+			
+		} catch (Exception b)
+		{
+			b.printStackTrace();
+		}
+		finally {
+			try {
+				f.close();
+				o.close();
+				
+			} catch (Exception c) {
+				c.printStackTrace();
+			}
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="testcases">
+	<test name="tests">
+		<classes>
+			<class name="org.testng.annotations.Test.Users"></class>
+		</classes>
+	</test>
+</suite>

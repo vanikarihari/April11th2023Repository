@@ -1,0 +1,47 @@
+package com.sgtesting.regularexpression;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegulaExpressionDemo3 {
+
+	public static void main(String[] args) {
+		Matches();
+		//find();
+		//group();
+
+	}
+	private static void Matches()
+	{
+		Pattern p=Pattern.compile("Vani");
+		Matcher m=p.matcher("Vani");
+	
+		System.out.println(m.matches());	
+	}
+	private static void find()
+	{
+		
+		Pattern p=Pattern.compile("Vani");
+		Matcher m=p.matcher("Vani nibba Vani nibbi Vani billi");
+		int count=0;
+		while(m.find())
+		{
+			count=count+1;			
+		}
+		System.out.println(count);
+	}
+	private static void group()
+	{
+		
+		Pattern p=Pattern.compile("Vani");
+		Matcher m=p.matcher("Vani nibba Vani nibbi Vani billi");
+		while(m.find())
+		{
+			System.out.println(m.group());			
+		}
+		
+	}
+
+
+
+}

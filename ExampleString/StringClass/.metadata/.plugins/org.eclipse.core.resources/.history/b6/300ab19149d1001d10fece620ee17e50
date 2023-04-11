@@ -1,0 +1,22 @@
+package com.sgtesting.vanireflection;
+class Demo
+{
+	Demo()
+	{
+		System.out.println("constructor");
+	}
+	static int k;
+	static
+	{
+		System.out.println("ststic block");
+	}
+}
+public class DemoClass {
+
+	public static void main(String[] args) {
+		Demo.k=9;
+	
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.sgtesting.vanireflection;
+
+import java.lang.reflect.Method;
+
+public class ReflectionCase1 {
+
+	public static void main(String[] args) {
+		Sample s=new Sample();
+		try {
+			Method p[]=	s.getClass().getMethods();
+			for(int i=0; i<p.length; i++)
+			{
+				String m=p[i].getName();
+				//System.out.println(m);
+				if(m.startsWith("disp"))
+				{
+					System.out.println(m);
+					p[i].invoke(s, null);
+				}
+				
+			}
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+
+
+
+		}
+	}
+
+
+

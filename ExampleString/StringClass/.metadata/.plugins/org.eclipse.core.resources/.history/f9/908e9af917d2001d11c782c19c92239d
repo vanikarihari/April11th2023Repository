@@ -1,0 +1,43 @@
+package com.sgtesting.regularexpression;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegularExpressionDemo {
+
+	public static void main(String[] args) {
+		matchesDemo();
+		 Find() ;
+		 countofmatching();
+
+	}
+	private static void matchesDemo()
+	{
+		Pattern p=Pattern.compile("Java");
+		Matcher m=p.matcher("Java");
+		boolean v=m.matches();
+		System.out.println(v);
+		System.out.println("++++++++++++++");
+	}
+	private static void Find() 
+	{
+		Pattern p=Pattern.compile("Java");
+		Matcher m=p.matcher("Java jdk Java jre jvm Java");
+		boolean l=m.find();
+		System.out.println(l);
+		System.out.println("++++++++++++++");
+	}
+	private static void countofmatching()
+	{
+		Pattern p=Pattern.compile("Java");
+		Matcher m=p.matcher("Java JDK Java JRE JVM Java");
+		int count=0;
+		while(m.find())
+		{
+			count=count+1;
+		}
+		System.out.println(count);
+		System.out.println("++++++++++++++");
+	}
+
+}

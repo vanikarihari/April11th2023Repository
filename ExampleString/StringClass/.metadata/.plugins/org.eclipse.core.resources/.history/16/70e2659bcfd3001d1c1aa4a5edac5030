@@ -1,0 +1,40 @@
+package com.sgtesting.javascript;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class JavaScriptDemo2 {
+    public static WebDriver o;
+	public static void main(String[] args) {
+		launchBrowser();
+		navigateURL();
+
+	}
+	private static void launchBrowser()
+	{
+		try
+		{
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			o=new ChromeDriver(options);
+		}catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static void navigateURL()
+	{
+		try
+		{
+			o.navigate().to("file:///E:/Example/Seleniumnotes/Sample.html");
+			Thread.sleep(2000);
+		}catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+
+
+}

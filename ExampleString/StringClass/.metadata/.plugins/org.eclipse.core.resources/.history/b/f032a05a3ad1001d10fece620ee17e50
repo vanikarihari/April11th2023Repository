@@ -1,0 +1,19 @@
+package com.sgtesting.reflectionmethod;
+
+public class Case6Example {
+
+	public static void main(String[] args) {
+		Sample3 o1=new Sample3();
+		
+		try {
+			
+			
+			
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

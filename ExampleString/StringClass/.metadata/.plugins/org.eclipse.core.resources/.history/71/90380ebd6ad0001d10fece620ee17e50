@@ -1,0 +1,25 @@
+package com.sgtesting.reflectionmethod;
+
+import java.lang.reflect.Method;
+
+public class Case3Example {
+
+	public static void main(String[] args) {
+		Sample k=new Sample();
+		try {
+			Method p[]=k.getClass().getDeclaredMethods();
+			for(int i=0;i<p.length;i++)
+			{
+				String l=p[i].getName();
+				System.out.println(l);
+				p[i].invoke(l,null);
+			}
+
+		}catch(Exception gf)
+		{
+			gf.printStackTrace();
+		}
+
+	}
+
+}

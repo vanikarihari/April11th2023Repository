@@ -1,0 +1,57 @@
+package com.sgtesting.xpathworking;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDownDemo {
+    private static WebDriver h=null;
+	public static void main(String[] args) {
+		launchbrowser();
+		NavigateURL();
+		selectdropdown();
+
+	}
+	private static void launchbrowser()
+	{
+		try {
+			ChromeOptions op=new ChromeOptions();
+			op.addArguments("--remote-allow-origins=*");
+			h=new ChromeDriver(op);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void NavigateURL()
+	{
+		try {
+			h.navigate().to("file:///E:/Example/Seleniumnotes/Sample.html");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void selectdropdown()
+	{
+		try {
+			WebElement o=h.findElement(By.id("tools"));
+			Select o1=new Select(o);
+			o1.selectByIndex(2);
+			Thread.sleep(2000);
+			o1.selectByValue("ide");
+			Thread.sleep(2000);
+			o1.selectByVisibleText("Selenium WebDriver");
+			
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

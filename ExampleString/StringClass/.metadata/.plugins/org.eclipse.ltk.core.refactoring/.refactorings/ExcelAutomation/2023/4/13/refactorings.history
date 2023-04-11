@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Library&apos; to &apos;ReflectionTypes&apos;&#x0D;&#x0A;- Original project: &apos;ExcelAutomation&apos;&#x0D;&#x0A;- Destination element: &apos;ReflectionTypes&apos;&#x0D;&#x0A;- Original element: &apos;Library&apos;" description="Copy folder" destination="=ReflectionTypes" element1="Library" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1680336773339" units="0" version="1.0"/>
+</session>

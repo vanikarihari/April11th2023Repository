@@ -1,0 +1,61 @@
+package com.sgtesting.reflectionmethod;
+
+import java.io.FileInputStream;
+import java.lang.reflect.Method;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Case5Example {
+
+	public static void main(String[] args) {
+		SelectedMethods();
+	}
+	private static void SelectedMethods()
+	{
+		FileInputStream f=null;
+		Workbook w=null;
+		Sheet s=null;
+		Row r =null;
+		Cell c=null;
+		try {
+			f=new FileInputStream("E:\\ReflectionaAssignments\\Assignment1.xlsx");
+			w=new XSSFWorkbook(f);
+			String k=w.getSheetName(0);
+			s=w.getSheet(k);
+			int rn=s.getPhysicalNumberOfRows();
+			for(int i=0;i<rn;i++)
+			{
+				r=s.getRow(i);
+				c=r.getCell(0);
+				String methodnames=c.getStringCellValue();
+				System.out.println(h);
+				
+				
+				c=r.getCell(1);
+				String pkgclass=c.getStringCellValue();
+				System.out.println(pkgclass);
+						
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				f.close();
+				w.close();
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+

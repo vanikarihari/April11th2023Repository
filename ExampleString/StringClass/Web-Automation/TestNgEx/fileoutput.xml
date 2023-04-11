@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Automation Prototype">
+	<test name="scenarios">
+		<classes>
+			<class name="com.sgtesting.prototype.AssignmentPrototype1">
+			</class>
+		</classes>
+	</test>
+</suite>

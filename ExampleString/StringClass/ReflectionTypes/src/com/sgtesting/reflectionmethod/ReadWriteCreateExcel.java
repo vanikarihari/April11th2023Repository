@@ -1,0 +1,130 @@
+package com.sgtesting.reflectionmethod;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadWriteCreateExcel {
+
+	public static void main(String[] args) {
+		//CreateFile();/
+		//writeFile();
+		ReadExcel();
+	}
+	private static void CreateFile()
+	{
+		try {
+			File o1=new File("E:\\ExcelCreate\\meow.xlsx");
+			boolean k=o1.createNewFile();
+			System.out.println(k);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void writeFile()
+	{
+		FileOutputStream v=null;
+		Workbook w=null;
+		Sheet s=null;
+		Row r=null;
+		Cell c=null;
+		try {
+			w=new XSSFWorkbook();
+			s=w.createSheet("Milk");
+
+			r=s.createRow(0);
+			c=r.createCell(0);
+			c.setCellValue("Milk Brands");
+			c=r.createCell(1);
+			c.setCellValue("Cattype");
+			c=r.createCell(2);
+			c.setCellValue("Catpetname");
+
+			r=s.createRow(1);
+			c=r.createCell(0);
+			c.setCellValue("Persian");
+			c=r.createCell(1);
+			c.setCellValue("Chintu");
+			c=r.createCell(2);
+			c.setCellValue("Nandini");
+
+			r=s.createRow(2);
+			c=r.createCell(0);
+			c.setCellValue("Indian");
+			c=r.createCell(1);
+			c.setCellValue("billi");
+			c=r.createCell(2);
+			c.setCellValue("Amul");
+
+			v=new FileOutputStream("E:\\ExcelCreate\\meow.xlsx");
+			w.write(v);
+
+
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				v.close();
+				w.close();			
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+	private static void ReadExcel()
+	{
+		FileInputStream a=null;
+		Workbook x=null;
+		Sheet y=null;
+		Row z=null;
+		Cell g=null;		
+
+		try {
+			a=new FileInputStream("E:\\ExcelCreate\\meow.xlsx");
+			x=new XSSFWorkbook(a);
+			y=x.getSheet("Milk");
+			int r=y.getPhysicalNumberOfRows();
+			for(int i=0;i<r;i++)
+			{
+				z=y.getRow(i);
+
+				int c=z.getPhysicalNumberOfCells();
+				for(int j=0;j<c;j++)
+				{
+					g=z.getCell(j);
+					Object data =g.getStringCellValue();
+					System.out.printf("%-12s",data);
+				}
+				System.out.println();
+			}
+
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				a.close();
+				x.close();
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+

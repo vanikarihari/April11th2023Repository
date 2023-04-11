@@ -1,0 +1,25 @@
+package com.sgtesting.reflectionmethod;
+
+import java.lang.reflect.Method;
+
+public class Case1Example {
+
+	public static void main(String[] args) {
+		Sample obj=new Sample();
+		try {
+			Method o[]=obj.getClass().getMethods();
+			for(int i=0;i<o.length;i++)
+			{
+				String a=o[i].getName();
+				System.out.println(a);
+				
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

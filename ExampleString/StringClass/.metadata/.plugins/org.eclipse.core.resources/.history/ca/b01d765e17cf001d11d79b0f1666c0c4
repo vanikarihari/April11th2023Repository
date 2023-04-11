@@ -1,0 +1,45 @@
+package com.sgtesting.xpathworking;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class DropDownDemo {
+    private static WebDriver h=null;
+	public static void main(String[] args) {
+		launchbrowser();
+		NavigateURL();
+
+	}
+	private static void launchbrowser()
+	{
+		try {
+			ChromeOptions op=new ChromeOptions();
+			op.addArguments("--remote-allow-origins=*");
+			h=new ChromeDriver(op);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void NavigateURL()
+	{
+		try {
+			h.navigate().to("file:///E:/Example/Seleniumnotes/Sample.html");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void selectdropdown()
+	{
+		try {
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.sgtesting.sample;
+
+import com.sgtesting.reflectionmethod.Sample;
+
+public class Simple {
+
+	public static void main(String[] args) {
+		Sample obj=new Sample();
+
+	}
+
+}

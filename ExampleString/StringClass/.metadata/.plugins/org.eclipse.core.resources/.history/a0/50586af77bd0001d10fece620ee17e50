@@ -1,0 +1,21 @@
+package com.sgtesting.reflectionmethod;
+class Demo
+{
+	Demo()
+	{
+		System.out.println("Constructor");
+	}
+	static String n;
+	static
+	{
+		System.out.println("Static Block");
+	}
+}
+public class Case5Example {
+
+	public static void main(String[] args) {
+		Demo o=new Demo();
+
+	}
+
+}

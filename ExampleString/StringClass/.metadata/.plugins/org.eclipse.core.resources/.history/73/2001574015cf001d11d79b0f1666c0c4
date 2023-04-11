@@ -1,0 +1,68 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+
+public class ActionClass {
+    public static WebDriver o1;
+	public static void main(String[] args) {
+		launch();
+		navigate();
+		Closewindow();
+		KitchenDining();
+
+	}
+	private static void launch()
+	{
+		try {
+			ChromeOptions o=new ChromeOptions();
+			o.addArguments("--remote-allow-origins=*");
+			o1=new ChromeDriver(o);
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void navigate()
+	{
+		try {
+				o1.get("https://www.flipkart.com/");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void Closewindow()
+	{
+		try {
+				o1.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void KitchenDining()
+	{
+		try {
+			Actions o2=new Actions(o1);
+			WebElement o3=o1.findElement(By.xpath("//*[@id='container']/div/div[2]/div/div/div[5]"));
+			o2.moveToElement(o3).build().perform();
+			WebElement o4=o1.findElement(By.xpath("//a[text()='Kitchen & Dining']"));
+			o2.moveToElement(o4).build().perform();    
+			WebElement o5=o1.findElement(By.xpath("//*[@id='container']/div/div[2]/div/div/div[5]/a/div[2]/div"));
+			o2.moveToElement(o5).build().perform();
+			o2.click(o5).build().perform();
+				
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+
+}

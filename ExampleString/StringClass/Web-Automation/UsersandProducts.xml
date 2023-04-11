@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Testcases">
+	<test name="Users and Products">
+		<classes>
+			<class name="com.sgtesting.testng2ex.Users"></class>
+			<class name="com.sgtesting.testngex.Products"></class>
+		</classes>
+	</test>
+</suite>

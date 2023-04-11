@@ -1,0 +1,11 @@
+package com.sgtesting.vanireflection;
+
+public class ReflectionCase1 {
+
+	public static void main(String[] args) {
+		Democlass1 o1=new Democlass1();
+		o1.display();
+
+	}
+
+}

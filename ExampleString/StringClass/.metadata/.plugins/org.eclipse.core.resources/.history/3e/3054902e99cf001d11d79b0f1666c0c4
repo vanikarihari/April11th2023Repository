@@ -1,0 +1,54 @@
+package com.sgtesting.csspath;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class CssPathEx {
+    private static WebDriver o=null;
+	public static void main(String[] args) {
+		launchBrowser();
+		navigateURL();
+		UsingTagname();
+
+	}
+	private static void launchBrowser()
+	{
+		try
+		{
+			
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			o=new ChromeDriver(options);
+		}catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static void navigateURL()
+	{
+		try
+		{
+			o.navigate().to("file:///E:/Example/Seleniumnotes/Sample.html");
+			Thread.sleep(2000);
+		}catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	private static void UsingTagname()
+	{
+		try {
+			o.findElement(By.cssSelector("body div form input")).sendKeys("admin");
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+
+
+}

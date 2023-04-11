@@ -1,0 +1,20 @@
+package com.sgtesting.regularexpression;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegulaExpressionDemo3 {
+
+	public static void main(String[] args) {
+		Matches();
+
+	}
+	private static void Matches()
+	{
+		Pattern p=Pattern.compile("Vani");
+		Matcher m=p.matcher("Vani nibba nibbi  billi");
+		boolean v=m.matches();
+		System.out.println(v);	
+	}
+
+}

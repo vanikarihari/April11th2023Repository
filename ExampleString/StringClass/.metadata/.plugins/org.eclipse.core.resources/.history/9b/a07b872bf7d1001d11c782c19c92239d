@@ -1,0 +1,5 @@
+package com.sgtesting.serialization;
+
+public class Employee {
+
+}
